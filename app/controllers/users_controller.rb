@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
-
-  skip_before_action :redirect_if_not_logged_in, only: [:new, :create]
   
 
   def new
+
   end
 
   def create
