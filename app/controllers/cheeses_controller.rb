@@ -1,6 +1,8 @@
 class CheesesController < ApplicationController
 
   def new
+    @cheese = Cheese.new
+    @cheese.build_style
   
   end
 
@@ -19,5 +21,5 @@ class CheesesController < ApplicationController
   end 
 
 
-  
+
 end
