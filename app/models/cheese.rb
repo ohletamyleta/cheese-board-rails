@@ -1,2 +1,4 @@
 class Cheese < ApplicationRecord
+
+  
 end

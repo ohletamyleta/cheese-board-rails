@@ -5,6 +5,9 @@ class CreateCheeses < ActiveRecord::Migration[6.1]
       t.string :color
       t.string :texture
       t.text :notes
+      t.belongs_to :style, foreign_key: true 
+      t.belongs_to :user, foreign_key: true 
+
 
       t.timestamps
     end
