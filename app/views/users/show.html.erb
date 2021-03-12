@@ -1,1 +1,8 @@
 <h1>Welcome <%= @user.name %> - Let's get cheesy! </h1>
+
+<h2>The Cheese Board Menu:</h2>
+<% @cheeses.each do |cheese| %>
+  <div>
+  <h3><%= link_to cheese.name, cheese_path(cheese) %> </h3>
+  </div><br>
+  <% end %>
