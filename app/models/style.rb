@@ -4,7 +4,7 @@ class Style < ApplicationRecord
 
   validates :name, uniqueness: true 
 
-  # scope :alpha -> {order(:name)}
+  scope :alpha -> {order(:name)}
 
   
 end
