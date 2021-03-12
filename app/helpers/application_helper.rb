@@ -7,6 +7,6 @@ module ApplicationHelper
       render partial: 'layouts/loggedout_links'
     end
   end
-end
+
 
 end
