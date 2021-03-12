@@ -1,7 +1,7 @@
 class CheesesController < ApplicationController
 
   before_action :set_cheese, only:[:show, :edit, :update]
-  
+  before_action :redirect_if_not_logged_in
 
 
   def new
@@ -28,6 +28,7 @@ class CheesesController < ApplicationController
   end 
 
   def update 
+    
   end 
 
 private
