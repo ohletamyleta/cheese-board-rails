@@ -1,0 +1,7 @@
+<h1>Browse through our member crafted wine and cheese pairings</h1>
+
+<ol>
+  <% @pairings.each do |pairing| %>
+    <li><%= pairing.name %></li>
+  <% end %>
+</ol>
