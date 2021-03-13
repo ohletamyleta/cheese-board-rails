@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   resources :styles
   resources :cheeses
   resources :users
+  resources :wines
   
 end
