@@ -2,7 +2,8 @@ class Cheese < ApplicationRecord
 
   belongs_to :user
   belongs_to :style
-  has_many :wines
+  has_many :pairings
+  has_many :wines, through: :pairings
 
   has_many :reviews
   has_many :users, through: :reviews

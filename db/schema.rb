@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_235530) do
+ActiveRecord::Schema.define(version: 2021_03_13_184728) do
 
   create_table "cheeses", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2021_03_12_235530) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["style_id"], name: "index_cheeses_on_style_id"
     t.index ["user_id"], name: "index_cheeses_on_user_id"
+  end
+
+  create_table "pairings", force: :cascade do |t|
+    t.integer "wine_id", null: false
+    t.integer "cheese_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cheese_id"], name: "index_pairings_on_cheese_id"
+    t.index ["wine_id"], name: "index_pairings_on_wine_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -61,6 +70,8 @@ ActiveRecord::Schema.define(version: 2021_03_12_235530) do
 
   add_foreign_key "cheeses", "styles"
   add_foreign_key "cheeses", "users"
+  add_foreign_key "pairings", "cheeses"
+  add_foreign_key "pairings", "wines"
   add_foreign_key "reviews", "cheeses"
   add_foreign_key "reviews", "users"
 end
