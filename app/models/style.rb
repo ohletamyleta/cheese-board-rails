@@ -8,3 +8,4 @@ class Style < ApplicationRecord
 
   
 end
+
