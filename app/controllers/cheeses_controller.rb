@@ -22,6 +22,7 @@ class CheesesController < ApplicationController
   end 
 
   def show 
+    @cheese = Cheese.find_by_id(params[:id])
   end 
 
   def edit 
@@ -39,7 +40,7 @@ private
 
   def set_cheese
     @cheese = Cheese.find_by(params[:id])
-    redirect_to cheese_path if !cheese 
+    redirect_to cheese_path if !@cheese 
   end
 
 
