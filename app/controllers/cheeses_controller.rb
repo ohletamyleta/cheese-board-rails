@@ -25,14 +25,22 @@ class CheesesController < ApplicationController
   end 
 
   def show 
-    @cheese = Cheese.find_by_id(params[:id])
+
   end 
 
   def edit 
+   
   end 
 
   def update 
-    
+    @cheese = Cheese.new(cheese_params)
+    @cheese.user_id = session[:user_id]
+    @cheese.build_style if !@cheese.style
+    if @cheese.save 
+      redirect_to cheese_path(@cheese)
+    else
+    render :edit
+    end 
   end 
 
 private
@@ -42,7 +50,7 @@ private
   end
 
   def set_cheese
-    @cheese = Cheese.find_by(params[:id])
+     @cheese = Cheese.find_by_id(params[:id])
     redirect_to cheese_path if !@cheese 
   end
 
