@@ -1,0 +1,17 @@
+<%= if @cheese %>
+  <h1>Reviews for <%= @cheese.name%> - <%= @cheese.style_name %>
+  <% else %>
+  <h1>All of the reviews</h1>
+  <% end %>
+
+  <ul>
+  <% @reviews.each do |review| %>
+
+    <li>
+    <%= @review.cheese.name%>: <%= link_to @review.title, review_path(review)%> - <%= @review.blocks%>
+    </li> <br> <br>
+
+    <% end %>
+    </ul>
+
+    

@@ -9,7 +9,6 @@ class Cheese < ApplicationRecord
 
   validates :name, :color, :texture, presence: true 
 
-  accepts_nested_attributes_for :wine
   # validates :not_a_duplicate 
 
   # def not_a_duplicate
@@ -19,6 +18,9 @@ class Cheese < ApplicationRecord
   #   end
   # end 
 
-  #scope :alpha -> {order(:name)}
+  def style_name
+    style.try(:name)
+  end
+
 
 end
