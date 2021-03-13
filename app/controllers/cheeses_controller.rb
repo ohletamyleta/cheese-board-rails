@@ -4,7 +4,7 @@ class CheesesController < ApplicationController
   before_action :redirect_if_not_logged_in
 
   def index 
-    @cheeses = Cheese.all 
+    @cheeses = Cheese.order_alpha
   end 
 
   def new
