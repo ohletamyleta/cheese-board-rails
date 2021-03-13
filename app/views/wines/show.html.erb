@@ -1,0 +1,11 @@
+<h1><%= @wine.varietal %> - <%= @wine.region %></h1>
+<br><br>
+
+<p>Recommended pairings: </p>
+<% @wine.pairings.each do |pairing| %>
+  <div>
+  <%= link_to pairing.cheese.name, cheese_path(pairing.cheese) %>
+  </div>
+
+  <% end %>
+
