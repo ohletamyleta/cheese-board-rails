@@ -23,7 +23,11 @@ class ReviewsController < ApplicationController
   end 
 
   def index 
-    
+    if @cheese = Cheese.find_by_id(params[:cheese_id])
+      @reviews = @cheese.reviews 
+    else 
+      @reviews = Review.all
+    end 
   end
 
 
