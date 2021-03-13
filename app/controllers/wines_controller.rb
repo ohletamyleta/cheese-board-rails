@@ -27,8 +27,9 @@ class WinesController < ApplicationController
   end 
 
   def update 
-    @wine= Wine.find_by(id: params[:id])
-    if @wine.update 
+    @wine= Wine.new(wine_params)
+    @wine.build_pairings if !@wine.pairings
+      if @wine.save
       redirect_to wine_path(@wine)
     else
       render :edit
