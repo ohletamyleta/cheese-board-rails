@@ -10,8 +10,8 @@ class Cheese < ApplicationRecord
   validates :name, :color, :texture, presence: true 
 
 
-  # figure out why this sin't working and triggers on signup!!!
-  validate :not_a_duplicate 
+  # figure out why this sin't working 
+  validate :not_a_duplicate
 
   def not_a_duplicate
     cheese = Cheese.find_by(name: name, style_id: style_id)
