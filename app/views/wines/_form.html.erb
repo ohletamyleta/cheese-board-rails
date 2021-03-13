@@ -1,0 +1,29 @@
+
+  <%= render partial: 'layouts/errors', locals: {object: @wine}  %>
+
+  <%= form_for(@wine) do |f| %>
+<h3>Add a wine to our list!</h3>
+  <div>
+    <%= f.label :varietal %>
+    <%= f.text_field :varietal %>
+  </div>
+  <div>
+    <%= f.label :region %>
+    <%= f.text_field :region %>
+  </div> 
+  <div> 
+
+  
+
+  <p>Pair this wine with one of our amazing cheeses!</p>
+  <br>
+    <%= f.label :cheeses %><br />
+    <% for cheese in Cheese.all %>
+      <%= check_box_tag "wine[cheese_ids][]", cheese.id, @wine.cheeses.include?(cheese) %>
+      <%=h cheese.name %><br />
+    <% end %>
+  </p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
