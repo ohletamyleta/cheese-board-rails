@@ -14,6 +14,7 @@ class CheesesController < ApplicationController
     @cheese = Cheese.new(cheese_params)
     @cheese.user_id = session[:user_id]
     @cheese.build_style if !@cheese.style
+    @cheese.build_wine if !@cheese.wine
     if @cheese.save 
       redirect_to cheese_path(@cheese)
     else
@@ -34,12 +35,13 @@ class CheesesController < ApplicationController
 private
 
   def cheese_params
-    params.require(:cheese).permit(:name, :color, :texture, :notes, :style_id, style_attributes:[:name, :details])
+    params.require(:cheese).permit(:name, :color, :texture, :notes, :style_id, :wine_id, style_attributes: [:name, :details], wine_attributes: [:varietal, :region])
   end
 
   def set_cheese
     @cheese = Cheese.find_by(params[:id])
     redirect_to cheese_path if !cheese 
   end
+
 
 end

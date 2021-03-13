@@ -24,14 +24,33 @@
 
 <p> Or create a new Style: </p>
 <div>
-  <%=f.fields_for :style do |b| %>
+  <%=f.fields_for :style do |s| %>
     <div>
-    <%= b.label :name %>
-    <%= b.text_field :name %>
+    <%= s.label :name %>
+    <%= s.text_field :name %>
     </div>
     <div>
-    <%= b.label :details %>
-    <%= b.text_field :details %>
+    <%= s.label :details %>
+    <%= s.text_field :details %>
+  <% end %>
+</div>
+<br>
+
+<p> Now, pair it with a wine we have: </p>
+<div>
+  <%= f.collection_select :wine_id, Wine.all, :id, :varietal, include_blank: 'Select One'%>
+</div>
+
+<p> Or BYOB! What's your poison? </p>
+<div>
+  <%=f.fields_for :wine do |w| %>
+    <div>
+    <%= w.label :varietal %>
+    <%= w.text_field :varietal %>
+    </div>
+    <div>
+    <%= w.label :region %>
+    <%= w.text_field :region %>
   <% end %>
 </div>
 <br>
