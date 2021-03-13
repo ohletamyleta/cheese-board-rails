@@ -3,11 +3,14 @@ class CheesesController < ApplicationController
   before_action :set_cheese, only:[:show, :edit, :update]
   before_action :redirect_if_not_logged_in
 
+  def index 
+    @cheeses = Cheese.all 
+  end 
 
   def new
     @cheese = Cheese.new
     @cheese.build_style
-  
+ 
   end
 
   def create 

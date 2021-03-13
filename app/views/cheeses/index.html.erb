@@ -1,0 +1,7 @@
+<h1>So many cheeses to choose from!</h1>
+
+<ol>
+  <% @cheeses.each do |cheese| %>
+    <li><%= link_to cheese.name, cheese_path(cheese) %></li>
+  <% end %>
+</ol>
