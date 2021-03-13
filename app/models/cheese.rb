@@ -9,14 +9,14 @@ class Cheese < ApplicationRecord
 
   validates :name, :color, :texture, presence: true 
 
-  # validates :not_a_duplicate 
+  validates :not_a_duplicate 
 
-  # def not_a_duplicate
-  #   cheese = Cheese.find_by(name: name, style_id: style_id)
-  #   if !!cheese && cheese != self
-  #     errors.add(:name, 'has already been added for that style')
-  #   end
-  # end 
+  def not_a_duplicate
+    cheese = Cheese.find_by(name: name, style_id: style_id)
+    if !!cheese && cheese != self
+      errors.add(:name, 'has already been added for that style')
+    end
+  end 
 
   def style_name
     style.try(:name)
