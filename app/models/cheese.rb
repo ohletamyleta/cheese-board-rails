@@ -8,6 +8,8 @@ class Cheese < ApplicationRecord
   has_many :users, through: :reviews
 
   validates :name, :color, :texture, presence: true 
+
+  accepts_nested_attributes_for :wine
   # validates :not_a_duplicate 
 
   # def not_a_duplicate
