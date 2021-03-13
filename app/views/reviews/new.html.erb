@@ -1,1 +1,32 @@
+<%= render partial: 'layouts/errors', locals: {object: @review}  %>
 
+
+<%= form_for(@review) do |f|%>
+  <% if params[:cheese_id] %>
+    <%= f.hidden_field :cheese_id %>
+  <% else %>
+    <div>
+      <%= f.label :cheese_id, "Select a Cheese" %>
+      <%= f.collection_select :cheese_id, Cheese.order_alpha, :id, :name_and_style, include_blank: true %>
+    </div>
+  <% end %>
+  <div>
+    <%= f.label :blocks, "Rate this cheese on a scale of 1 to 10 blocks" %>
+    <%= f.number_field :blocks, min:0, max:11 %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content, size: "25x10" %>
+  </div>
+  <br>
+
+
+
+  <%= f.submit %>
+<% end %>

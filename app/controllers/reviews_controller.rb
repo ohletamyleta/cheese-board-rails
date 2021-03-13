@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
   end
 
   def create 
-    @review = current_user.reviews.build(reviews_params)
+    @review = current_user.reviews.build(review_params)
     if @review.save
       redirect_to review_path(@review)
     else
@@ -23,6 +23,7 @@ class ReviewsController < ApplicationController
   end 
 
   def index 
+    
   end
 
 

@@ -9,7 +9,8 @@ class Cheese < ApplicationRecord
 
   validates :name, :color, :texture, presence: true 
 
-
+  scope :order_alpha, -> { order(name: :asc)}
+  
   # figure out why this sin't working 
   validate :not_a_duplicate
 
@@ -23,6 +24,10 @@ class Cheese < ApplicationRecord
   def style_name
     style.try(:name)
   end
+
+  def name_and_style
+    "#{name} - #{style.try(:name)}"
+  end 
 
 
 end
