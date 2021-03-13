@@ -5,6 +5,4 @@ class WinesController < ApplicationController
     @wines = Wine.all.order_alpha
   end
 
-
-
 end
