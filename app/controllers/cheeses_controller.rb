@@ -14,7 +14,7 @@ class CheesesController < ApplicationController
   def create 
     @cheese = current_user.cheeses.build(cheese_params)
     if @cheese.save
-      redirect_to cheeses_path
+      redirect_to cheese_path(@cheese)
     else
       render :new
     end
@@ -28,9 +28,9 @@ class CheesesController < ApplicationController
   end 
 
   def update 
-    @cheese = Cheese.new(cheese_params)
-    @cheese.user_id = session[:user_id]
-    if @cheese.save 
+    if @cheese.update(cheese_params)
+      @cheese.image.purge
+      @cheese.image.attach(params[:cheese][:image])
       redirect_to cheese_path(@cheese)
     else
     render :edit
