@@ -1,3 +1,5 @@
+<h1>Everyone has an opinion - what's your two cents?</h1>
+
 <%= render partial: 'layouts/errors', locals: {object: @review}  %>
 
 
@@ -10,23 +12,25 @@
       <%= f.collection_select :cheese_id, Cheese.order_alpha, :id, :name, include_blank: true %>
     </div>
   <% end %>
+  
+<br><br>
   <div>
     <%= f.label :blocks, "Rate this cheese on a scale of 1 to 10 blocks" %>
     <%= f.number_field :blocks, min:0, max:11 %>
   </div>
-  <br>
+ 
+<br><br>
   <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
-  <br>
+  
+<br><br>
   <div>
     <%= f.label :content %>
     <%= f.text_area :content, size: "25x10" %>
   </div>
   <br>
-
-
 
   <%= f.submit %>
 <% end %>
