@@ -13,17 +13,17 @@
   <%= f.label :texture %>
   <%= f.text_field :texture %>
 </div> 
-<div>  
+<div>
+
+<%= f.label :style %>
+<%= f.select :style,options_for_select(["Fresh/Unripened", "Mild", "Creme", "Brie/Camembert", "Swiss", "Cheddar", "Grana", "Goat's Milk", "Sheep's Milk", "Blue/Bleu", "Strong", "Flavored"]) %>
+
 </div> 
 <div> 
   <%= f.label :notes %>
   <%= f.text_area :notes %>
 </div> 
 <div>  
-
-
-
-
 
   <%= f.submit "FonDO It!" %>
 <% end %>
