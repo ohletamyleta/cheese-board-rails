@@ -6,29 +6,36 @@
   <%= f.text_field :name %>
 </div>
 
+<br><br>
 <div>
   <%= f.label :color %>
   <%= f.text_field :color %>
 </div> 
+
+<br><br>
 <div> 
   <%= f.label :texture %>
   <%= f.text_field :texture %>
 </div> 
-<div>
 
+<br><br>
+<div>
 <%= f.label :style %>
 <%= f.select :style,options_for_select(["Fresh/Unripened", "Mild", "Creme", "Brie/Camembert", "Swiss", "Cheddar", "Grana", "Goat's Milk", "Sheep's Milk", "Blue/Bleu", "Strong", "Flavored"]) %>
-
 </div> 
+
+<br><br>
 <div> 
   <%= f.label :notes %>
   <%= f.text_area :notes %>
 </div> 
+
+<br><br>
 <div>  
 <%= f.label :image, "Add a photo" %>
 <%= f.file_field :image %>
 
-
+<br><br>
 
   <%= f.submit "FonDO It!" %>
 <% end %>
