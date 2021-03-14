@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.7'
  gem 'omniauth-rails_csrf_protection'
 
  gem 'cloudinary'
- gem 'materialize-sass', '~> 1.0.0'
+#  gem 'materialize-sass', '~> 1.0.0'
 
 
 # Use Active Storage variant
