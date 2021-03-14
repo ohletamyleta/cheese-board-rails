@@ -10,6 +10,7 @@ Rails.application.routes.draw do
  get '/signup' => 'users#new'
  post '/signup' => 'users#create'
  
+ get '/auth/google_oauth2/callback' => 'sessions#omniauth'
  
  
   resources :reviews
