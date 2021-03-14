@@ -9,6 +9,8 @@ class Cheese < ApplicationRecord
   has_many :reviews
   has_many :users, through: :reviews
 
+  has_one_attached :image
+
   validates :name, :color, :texture, presence: true 
 
   scope :order_alpha, -> { order(name: :asc)}

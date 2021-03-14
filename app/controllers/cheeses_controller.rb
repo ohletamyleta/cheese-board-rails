@@ -40,7 +40,7 @@ class CheesesController < ApplicationController
 private
 
   def cheese_params
-    params.require(:cheese).permit(:name, :color, :texture, :notes, :style)
+    params.require(:cheese).permit(:name, :color, :texture, :notes, :style, :image)
   end
 
   def set_cheese
