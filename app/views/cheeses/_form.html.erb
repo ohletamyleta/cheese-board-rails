@@ -21,25 +21,7 @@
 </div> 
 <div>  
 
-<p> Select a Style that already exists: </p>
-<div>
-  <%= f.collection_select :style_id, Style.all, :id, :name, include_blank: 'Select One'%>
 
-</div>
-
-<p> Or create a new Style: </p>
-<div>
-  <%=f.fields_for :style do |s| %>
-    <div>
-    <%= s.label :name %>
-    <%= s.text_field :name %>
-    </div>
-    <div>
-    <%= s.label :details %>
-    <%= s.text_field :details %>
-  <% end %>
-</div>
-<br>
 
 
 

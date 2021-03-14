@@ -9,7 +9,6 @@ class CheesesController < ApplicationController
 
   def new
     @cheese = Cheese.new
-    @cheese.build_style
   end
 
   def create 
@@ -19,17 +18,6 @@ class CheesesController < ApplicationController
     else
       render :new
     end
-
-    # @cheese = Cheese.new(cheese_params)
-    # @cheese.user_id = session[:user_id]
-    
-    # @cheese.build_style if !@cheese.style
-
-    # if @cheese.save 
-    #   redirect_to cheese_path(@cheese)
-    # else
-    # render :new
-    # end 
   end 
 
   def show 
@@ -42,7 +30,6 @@ class CheesesController < ApplicationController
   def update 
     @cheese = Cheese.new(cheese_params)
     @cheese.user_id = session[:user_id]
-    @cheese.build_style if !@cheese.style
     if @cheese.save 
       redirect_to cheese_path(@cheese)
     else
@@ -53,7 +40,7 @@ class CheesesController < ApplicationController
 private
 
   def cheese_params
-    params.require(:cheese).permit(:name, :color, :texture, :notes, :style, :style_id, style_attributes: [:name, :details])
+    params.require(:cheese).permit(:name, :color, :texture, :notes, :style)
   end
 
   def set_cheese

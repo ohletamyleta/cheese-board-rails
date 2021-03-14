@@ -7,7 +7,7 @@
   <% else %>
     <div>
       <%= f.label :cheese_id, "Select a Cheese" %>
-      <%= f.collection_select :cheese_id, Cheese.order_alpha, :id, :name_and_style, include_blank: true %>
+      <%= f.collection_select :cheese_id, Cheese.order_alpha, :id, include_blank: true %>
     </div>
   <% end %>
   <div>
