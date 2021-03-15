@@ -22,7 +22,7 @@ localhost:3000
 
 To learn more about the functionality of this app, watch the video walkthrough:  https://youtu.be/8PkLOFJ2iUI
 
-For more information on the process, my blog post is at:  
+For more information on the process, my blog post is at:  https://ohletamyleta.medium.com/moving-on-and-up-from-sinatra-79683510312
 
 #### Contributing
 
