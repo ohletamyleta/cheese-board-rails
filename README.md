@@ -1,24 +1,33 @@
-# README
+# Cheese Board
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app that allows the user to input their favorite cheeses, create wines to pair with them, and review the cheeses in the database.  This is a portfolio project for the Phase 3 Rails section at Flatiron School.
 
-Things you may want to cover:
+### Getting Started
 
-* Ruby version
+To get started with the app, clone the repo then install the needed gems:
 
-* System dependencies
+` $ bundle install`
 
-* Configuration
+Next, migrate the database:
 
-* Database creation
+` $ rake db:migrate`
 
-* Database initialization
+Then run the app in a local server:
 
-* How to run the test suite
+` $ rails server`
 
-* Services (job queues, cache servers, search engines, etc.)
+Navigate to:
 
-* Deployment instructions
+localhost:3000 
 
-* ...
+To learn more about the functionality of this app, watch the video walkthrough:
+
+For more information on the process, my blog post is at:  
+
+#### Contributing
+
+Bug reports and pull requests are welcome on github at https://github.com/ohletamyleta/cheese-board-rails
+
+### License
+
+All source code is available jointly under the MIT license.  See LICENSE.md for details.
