@@ -16,11 +16,11 @@ Then run the app in a local server:
 
 ` $ rails server`
 
-Navigate to:
+And navigate to:
 
 localhost:3000 
 
-To learn more about the functionality of this app, watch the video walkthrough:
+To learn more about the functionality of this app, watch the video walkthrough:  https://youtu.be/8PkLOFJ2iUI
 
 For more information on the process, my blog post is at:  
 
