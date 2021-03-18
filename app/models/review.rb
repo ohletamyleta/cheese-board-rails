@@ -8,6 +8,11 @@ class Review < ApplicationRecord
 
   validates :cheese, uniqueness: { scope: :user, message: "has already been reviewed by you" }
 
+  scope :top_cheeses, -> { where('blocks > ?', 8) }
+
+
+
+
 
 
 end

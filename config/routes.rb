@@ -10,7 +10,10 @@ Rails.application.routes.draw do
  post '/signup' => 'users#create'
  
  get '/auth/:provider/callback' => 'sessions#omniauth'
+
+ get '/reviews/top_cheeses' => 'reviews#top_cheeses'
  
+
  
   resources :reviews
   resources :styles
@@ -19,6 +22,8 @@ Rails.application.routes.draw do
   resources :wines
   resources :pairings
 
-
+  resources :cheeses do
+    resources :reviews, oknl: [:new, :index]
+  end 
 
 end

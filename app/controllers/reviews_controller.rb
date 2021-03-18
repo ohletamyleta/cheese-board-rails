@@ -30,7 +30,11 @@ class ReviewsController < ApplicationController
     end 
   end
 
-
+  def top_cheeses
+    @reviews = Review.top_cheeses
+    render :index
+  end 
+    
   private 
 
   def review_params
