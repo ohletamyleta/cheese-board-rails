@@ -29,8 +29,6 @@ class CheesesController < ApplicationController
 
   def update 
     if @cheese.update(cheese_params)
-      # @cheese.image.purge
-      # @cheese.image.attach(params[:cheese][:image])
       redirect_to cheese_path(@cheese)
     else
     render :edit
