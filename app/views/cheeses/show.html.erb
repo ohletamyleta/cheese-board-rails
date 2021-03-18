@@ -8,10 +8,21 @@
   <image src="<%=(url_for(@cheese.image))%>">
   <% end %>
   <br><br><br>
+
+  <h3>But is it good?!?<h3>
+  <h4><em?Reviews for <%= @cheese.name %></em></h4>
+  <ul>
+  <% @reviews.each do |review| %>
+
+    <li>
+    <%= review.cheese.name %>: <%= link_to review.title, review_path(review)%> - <%= review.blocks%>
+    </li> <br> <br>
+
+    <% end %>
+    </ul>
   
+    <br><br><br>
 
 <%= link_to "Edit This Cheese", edit_cheese_path(@cheese) %>
-
-<br><br><br>
 
 <%= link_to "Add a new review!", new_cheese_review_path(@cheese) %>

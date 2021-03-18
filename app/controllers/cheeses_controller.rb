@@ -21,6 +21,7 @@ class CheesesController < ApplicationController
   end 
 
   def show 
+    @reviews = @cheese.reviews 
   end 
 
   def edit 
