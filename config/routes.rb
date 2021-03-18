@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :users
   resources :wines
   resources :pairings
-  resources :wines
+
 
 
 end
